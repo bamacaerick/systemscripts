@@ -1,6 +1,57 @@
+/*
+ * Post content ("entry content") typography and block alignment.
+ * Selectors use :where() so they stay at zero specificity and utilities can override them.
+ */
+
+/* Block alignment grid (front end). Children sit in the content column;
+   .alignwide and .alignfull break out without 100vw hacks. Requires the
+   element to be full width, i.e. outside .container. */
+.entry-content {
+  --ss-content: var(--wp--style--global--content-size, 48rem);
+  --ss-wide: var(--wp--style--global--wide-size, 80rem);
+  --ss-gutter: 1.5rem;
+
+  display: grid;
+  grid-template-columns:
+    [full-start] minmax(var(--ss-gutter), 1fr)
+    [wide-start] minmax(0, calc((var(--ss-wide) - var(--ss-content)) / 2))
+    [content-start] min(var(--ss-content), calc(100% - var(--ss-gutter) * 2))
+    [content-end] minmax(0, calc((var(--ss-wide) - var(--ss-content)) / 2))
+    [wide-end] minmax(var(--ss-gutter), 1fr)
+    [full-end];
+
+  > * {
+    grid-column: content;
+    min-width: 0;
+  }
+
+  > .alignwide {
+    grid-column: wide;
+  }
+
+  > .alignfull {
+    grid-column: full;
+  }
+
+  > .alignleft {
+    justify-self: start;
+    max-width: 50%;
+  }
+
+  > .alignright {
+    justify-self: end;
+    max-width: 50%;
+  }
+
+  > .aligncenter {
+    justify-self: center;
+  }
+}
+
 .entry-content,
+.editor-styles-wrapper .is-root-container,
 .block-editor-block-list__layout {
-  color: var(--color-zinc-950);
+  color: var(--color-dark);
   font-size: var(--text-lg);
   line-height: var(--text-lg--line-height);
 
@@ -26,6 +77,12 @@
     margin-top: --spacing(8);
   }
 
+  :where(h4) {
+    font-weight: var(--font-weight-semibold);
+    font-size: var(--text-lg);
+    margin-top: --spacing(6);
+  }
+
   :where(h2 + h3) {
     margin-top: 0;
   }
@@ -44,6 +101,7 @@
 
   :where(a) {
     color: var(--color-primary);
+    text-decoration-line: underline;
   }
 
   :where(li) {
@@ -51,7 +109,7 @@
   }
 
   :where(li)::marker {
-    color: var(--color-zinc-500);
+    color: var(--color-muted);
   }
 
   :where(li > *),
@@ -68,9 +126,54 @@
     font-weight: var(--font-weight-semibold);
   }
 
+  :where(blockquote) {
+    border-left: 4px solid var(--color-border);
+    padding-left: --spacing(6);
+    color: var(--color-muted);
+    font-style: italic;
+  }
+
   :where(figure) {
     margin-top: --spacing(12);
     margin-bottom: --spacing(12);
+  }
+
+  :where(figcaption) {
+    margin-top: --spacing(3);
+    font-size: var(--text-sm);
+    color: var(--color-muted);
+  }
+
+  :where(img) {
+    max-width: 100%;
+    height: auto;
+  }
+
+  :where(code, kbd, pre) {
+    font-family: var(--font-mono);
+    font-size: 0.9em;
+  }
+
+  :where(pre) {
+    overflow-x: auto;
+    padding: --spacing(4);
+    background-color: var(--color-light);
+    border-radius: var(--radius-md);
+  }
+
+  :where(hr) {
+    border-color: var(--color-zinc-200);
+  }
+
+  :where(table) {
+    width: 100%;
+    border-collapse: collapse;
+  }
+
+  :where(th, td) {
+    border: 1px solid var(--color-zinc-200);
+    padding: --spacing(2) --spacing(3);
+    text-align: left;
   }
 
   :where(li > :first-child) {

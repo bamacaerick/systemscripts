@@ -1,0 +1,54 @@
+/* Reusable component classes. Keep utilities in markup; put repeated patterns here. */
+
+.ss-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  border-radius: var(--radius-full, 9999px);
+  background-color: var(--color-dark);
+  color: var(--color-white);
+  padding: 0.5rem 1.25rem;
+  font-size: var(--text-sm);
+  font-weight: var(--font-weight-semibold);
+  text-decoration-line: none;
+  transition: background-color 0.15s;
+  min-height: 2.75rem; /* >= 24px target size (WCAG 2.5.8) */
+
+  &:hover {
+    background-color: var(--color-primary);
+    text-decoration-line: none;
+  }
+
+  &.ss-button--secondary {
+    background-color: var(--color-white);
+    color: var(--color-dark);
+    border: 1px solid var(--color-border);
+
+    &:hover {
+      background-color: var(--color-light);
+    }
+  }
+}
+
+/* paginate_links() output (see SystemScripts\Pagination) */
+.page-numbers {
+  display: inline-flex;
+  min-width: 2.75rem;
+  min-height: 2.75rem;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius-md);
+  padding-inline: 0.75rem;
+  text-decoration-line: none;
+
+  &.current {
+    background-color: var(--color-dark);
+    color: var(--color-white);
+    font-weight: var(--font-weight-semibold);
+  }
+
+  &:is(a):hover {
+    background-color: var(--color-light);
+  }
+}

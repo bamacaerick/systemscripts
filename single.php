@@ -1,6 +1,6 @@
 <?php
 /**
- * Single post template file.
+ * Single post (and custom post type) template.
  *
  * @package SystemScripts
  */
@@ -8,17 +8,15 @@
 get_header();
 ?>
 
-<div class="container my-8 mx-auto">
-    <?php if (have_posts()): ?>
-        <?php while (have_posts()): the_post(); ?>
-            <?php get_template_part('template-parts/content', 'single'); ?>
+<?php while (have_posts()): the_post(); ?>
+    <?php get_template_part('template-parts/content', 'single'); ?>
 
-            <?php if (comments_open() || get_comments_number()): ?>
-                <?php comments_template(); ?>
-            <?php endif; ?>
-        <?php endwhile; ?>
+    <?php if (comments_open() || get_comments_number()): ?>
+        <div class="container">
+            <?php comments_template(); ?>
+        </div>
     <?php endif; ?>
-</div>
+<?php endwhile; ?>
 
 <?php
 get_footer();

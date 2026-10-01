@@ -28,3 +28,8 @@ spl_autoload_register(static function (string $class): void {
 
 SystemScripts\Setup::boot();
 SystemScripts\Assets::boot();
+SystemScripts\Customizer::boot();
+SystemScripts\Security::boot();
+SystemScripts\Comments::boot();
+SystemScripts\Author::boot();
+SystemScripts\Analytics::boot();

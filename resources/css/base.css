@@ -1,0 +1,80 @@
+/*
+ * Element defaults. Lives in the Tailwind `base` layer so utilities always win.
+ * (theme.json only carries tokens: its `styles` output is unlayered and would beat utilities.)
+ */
+@layer base {
+  /* Tailwind v4 defaults borders to currentColor; keep dividers subtle. */
+  *,
+  ::after,
+  ::before,
+  ::backdrop,
+  ::file-selector-button {
+    border-color: var(--color-zinc-200, currentColor);
+  }
+
+  html {
+    -webkit-text-size-adjust: 100%;
+    scroll-padding-top: 1rem;
+  }
+
+  body {
+    font-family: var(--font-sans);
+    background-color: var(--color-white);
+    color: var(--color-dark);
+    line-height: 1.6;
+  }
+
+  a {
+    color: var(--color-primary);
+    text-decoration-line: underline;
+    text-underline-offset: 0.2em;
+  }
+
+  a:hover {
+    text-decoration-thickness: 2px;
+  }
+
+  /* Visible keyboard focus on every interactive element (WCAG 2.4.7 / 2.4.11). */
+  :focus-visible {
+    outline: 3px solid var(--color-primary);
+    outline-offset: 2px;
+  }
+
+  /* Programmatic focus targets (skip link destination) need no ring. */
+  [tabindex='-1']:focus {
+    outline: none;
+  }
+
+  /* Form controls: 3:1 border contrast (WCAG 1.4.11). */
+  :where(input:not([type='checkbox'], [type='radio'], [type='submit']), textarea, select) {
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    background-color: var(--color-white);
+    padding: 0.5rem 0.75rem;
+    width: 100%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  ::before,
+  ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+@media print {
+  #masthead,
+  #colophon,
+  .no-print {
+    display: none !important;
+  }
+
+  a[href^='http']::after {
+    content: ' (' attr(href) ')';
+    font-size: 0.8em;
+  }
+}

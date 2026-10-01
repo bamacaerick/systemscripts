@@ -1,26 +1,24 @@
-<!DOCTYPE html>
-<html <?php language_attributes(); ?> class="no-js">
-<head>
-	<meta charset="<?php bloginfo( 'charset' ); ?>">
-	<meta name="viewport" content="width=device-width">
-	<link rel="profile" href="http://gmpg.org/xfn/11">
+<?php
+/**
+ * 404 template.
+ *
+ * @package SystemScripts
+ */
 
-	<?php wp_head(); ?>
-</head>
-<body class="antialiased">
-	<div class="md:flex min-h-screen">
-		<div class="w-full md:w-1/2 flex items-center justify-center">
-			<div class="max-w-sm m-8">
-				<div class="text-5xl md:text-15xl text-dark border-light border-b">404</div>
-				<div class="w-16 h-1 bg-purple-light my-3 md:my-6"></div>
-				<p class="text-dark/90 text-2xl md:text-3xl font-light leading-relaxed mb-8"><?php _e( 'Sorry, the page you are looking for could not be found.', 'systemscripts' ); ?></p>
-				<a href="<?php echo get_bloginfo( 'url' ); ?>" class="inline-flex rounded-full px-4 py-1.5 text-sm font-semibold transition bg-dark text-white hover:bg-dark/90 !no-underline">
-					<?php _e( 'Go Home', 'systemscripts' ); ?>
-				</a>
-			</div>
-		</div>
-	</div>
+get_header();
+?>
 
-    <?php wp_footer(); ?>
-</body>
-</html>
+<div class="container py-16">
+    <div class="mx-auto max-w-xl space-y-6">
+        <p class="text-6xl font-semibold text-muted" aria-hidden="true">404</p>
+        <h1 class="text-3xl font-semibold"><?php esc_html_e('Page not found', 'systemscripts'); ?></h1>
+        <p class="text-lg text-muted"><?php esc_html_e('Sorry, the page you are looking for could not be found. Try searching, or head back to the home page.', 'systemscripts'); ?></p>
+        <?php get_search_form(); ?>
+        <p>
+            <a href="<?php echo esc_url(home_url('/')); ?>" class="ss-button"><?php esc_html_e('Go to the home page', 'systemscripts'); ?></a>
+        </p>
+    </div>
+</div>
+
+<?php
+get_footer();
