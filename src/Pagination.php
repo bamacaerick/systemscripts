@@ -10,6 +10,10 @@ use WP_Query;
  */
 class Pagination
 {
+    // SVG rather than a text arrow: single-character text nodes are skipped by contrast checkers.
+    private const CHEVRON_PREV = '<svg class="size-4" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true" focusable="false"><path fill-rule="evenodd" d="M9.78 4.22a.75.75 0 0 1 0 1.06L7.06 8l2.72 2.72a.75.75 0 1 1-1.06 1.06L5.47 8.53a.75.75 0 0 1 0-1.06l3.25-3.25a.75.75 0 0 1 1.06 0Z" clip-rule="evenodd"/></svg>';
+    private const CHEVRON_NEXT = '<svg class="size-4" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true" focusable="false"><path fill-rule="evenodd" d="M6.22 4.22a.75.75 0 0 1 1.06 0l3.25 3.25a.75.75 0 0 1 0 1.06l-3.25 3.25a.75.75 0 0 1-1.06-1.06L8.94 8 6.22 5.28a.75.75 0 0 1 0-1.06Z" clip-rule="evenodd"/></svg>';
+
     public static function render(?WP_Query $query = null): void
     {
         $query = $query ?? $GLOBALS['wp_query'];
@@ -26,8 +30,8 @@ class Pagination
             'current'   => $current,
             'type'      => 'array',
             'mid_size'  => 2,
-            'prev_text' => self::label(__('Previous page', 'systemscripts'), '&larr;'),
-            'next_text' => self::label(__('Next page', 'systemscripts'), '&rarr;'),
+            'prev_text' => self::label(__('Previous page', 'systemscripts'), self::CHEVRON_PREV),
+            'next_text' => self::label(__('Next page', 'systemscripts'), self::CHEVRON_NEXT),
         ]);
 
         if (!$links) {
@@ -46,8 +50,8 @@ class Pagination
         echo '</ul></nav>';
     }
 
-    private static function label(string $text, string $arrow): string
+    private static function label(string $text, string $icon): string
     {
-        return sprintf('<span aria-hidden="true">%s</span><span class="sr-only">%s</span>', $arrow, esc_html($text));
+        return $icon . sprintf('<span class="sr-only">%s</span>', esc_html($text));
     }
 }

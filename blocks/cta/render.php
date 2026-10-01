@@ -18,7 +18,7 @@ $title_id = wp_unique_id('ss-cta-title-');
 ?>
 <section <?php echo get_block_wrapper_attributes(['class' => 'ss-cta ' . $surface . ' py-12']); // phpcs:ignore WordPress.Security.EscapeOutput ?> aria-labelledby="<?php echo esc_attr($title_id); ?>">
     <div class="mx-auto flex max-w-3xl flex-col items-center gap-4 px-6 text-center">
-        <<?php echo $tag; ?> id="<?php echo esc_attr($title_id); ?>" class="text-3xl font-semibold text-balance md:text-4xl"><?php echo esc_html($attributes['heading']); ?></<?php echo $tag; ?>>
+        <<?php echo tag_escape($tag); ?> id="<?php echo esc_attr($title_id); ?>" class="text-3xl font-semibold text-balance md:text-4xl"><?php echo esc_html($attributes['heading']); ?></<?php echo tag_escape($tag); ?>>
         <?php if ($attributes['text'] !== ''): ?>
             <div class="text-lg"><?php echo Blocks::paragraphs($attributes['text']); // phpcs:ignore WordPress.Security.EscapeOutput ?></div>
         <?php endif; ?>

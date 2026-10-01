@@ -1,0 +1,603 @@
+# Copyright (C) 2026 SystemScripts Team (bamacaerick)
+# This file is distributed under the MIT.
+msgid ""
+msgstr ""
+"Project-Id-Version: SystemScripts 0.1.0\n"
+"Report-Msgid-Bugs-To: bamacaerick@gmail.com\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2026-10-01T08:25:48+02:00\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"X-Generator: WP-CLI 2.12.0\n"
+"X-Domain: systemscripts\n"
+
+#. Theme Name of the theme
+#: style.css
+#: src/Blocks.php:32
+#: src/Blocks.php:186
+#: src/Customizer.php:73
+msgid "SystemScripts"
+msgstr ""
+
+#. Theme URI of the theme
+#: style.css
+msgid "https://systemscripts.com"
+msgstr ""
+
+#. Description of the theme
+#: style.css
+msgid "SystemScripts is a base WordPress theme built with Tailwind CSS and Vite, with native custom blocks, structured data (schema.org JSON-LD), SEO and accessibility in mind. Originally forked from TailPress by Jeffrey van Rossum (MIT)."
+msgstr ""
+
+#. Author of the theme
+#: style.css
+msgid "SystemScripts Team (bamacaerick)"
+msgstr ""
+
+#. Author URI of the theme
+#: style.css
+msgid "https://www.linkedin.com/in/bamacaerick/"
+msgstr ""
+
+#: 404.php:14
+#: src/Breadcrumbs.php:55
+msgid "Page not found"
+msgstr ""
+
+#: 404.php:15
+msgid "Sorry, the page you are looking for could not be found. Try searching, or head back to the home page."
+msgstr ""
+
+#: 404.php:18
+msgid "Go to the home page"
+msgstr ""
+
+#: blocks/cards/render.php:13
+msgid "Card grid: add at least one card with a title."
+msgstr ""
+
+#: blocks/cta/render.php:11
+msgid "Call to action: add a heading in the block settings."
+msgstr ""
+
+#: blocks/faq/render.php:14
+msgid "FAQ: add at least one question and answer."
+msgstr ""
+
+#: blocks/hero/render.php:13
+msgid "Hero: add a heading in the block settings."
+msgstr ""
+
+#: blocks/testimonials/render.php:13
+msgid "Testimonials: add at least one quote."
+msgstr ""
+
+#: comments.php:18
+#, php-format
+msgctxt "comments title"
+msgid "%1$s comment"
+msgid_plural "%1$s comments"
+msgstr[0] ""
+msgstr[1] ""
+
+#: comments.php:43
+msgid "Comment navigation"
+msgstr ""
+
+#: comments.php:44
+msgid "Older comments"
+msgstr ""
+
+#: comments.php:45
+msgid "Newer comments"
+msgstr ""
+
+#: comments.php:51
+msgid "Comments are closed."
+msgstr ""
+
+#: footer.php:30
+msgid "Footer"
+msgstr ""
+
+#: header.php:20
+msgid "Skip to content"
+msgstr ""
+
+#: header.php:46
+msgid "Menu"
+msgstr ""
+
+#: header.php:57
+msgid "Primary"
+msgstr ""
+
+#: header.php:69
+msgid "Set up the primary menu"
+msgstr ""
+
+#: searchform.php:11
+msgid "Search for:"
+msgstr ""
+
+#: searchform.php:14
+msgid "Search"
+msgstr ""
+
+#: src/Assets.php:85
+msgid "SystemScripts: assets are not built. Run \"pnpm install && pnpm build\" in the theme folder."
+msgstr ""
+
+#: src/Author.php:72
+msgid "Author details (SystemScripts)"
+msgstr ""
+
+#: src/Author.php:75
+msgid "Job title"
+msgstr ""
+
+#: src/Author.php:79
+msgid "Topics of expertise"
+msgstr ""
+
+#: src/Author.php:82
+msgid "Comma separated. Used in structured data (knowsAbout)."
+msgstr ""
+
+#: src/Author.php:86
+msgid "Profile links"
+msgstr ""
+
+#: src/Author.php:89
+msgid "One URL per line (LinkedIn, GitHub, X...). Used for the author box and structured data (sameAs)."
+msgstr ""
+
+#: src/Blocks.php:231
+msgid "Landing page"
+msgstr ""
+
+#: src/Blocks.php:232
+msgid "Hero, cards, FAQ and call to action."
+msgstr ""
+
+#: src/Breadcrumbs.php:19
+msgid "Home"
+msgstr ""
+
+#: src/Breadcrumbs.php:22
+msgid "Blog"
+msgstr ""
+
+#. translators: %s: search query
+#: src/Breadcrumbs.php:53
+#: template-parts/archive-header.php:12
+#, php-format
+msgid "Search results for: %s"
+msgstr ""
+
+#: src/Breadcrumbs.php:78
+msgid "Breadcrumb"
+msgstr ""
+
+#: src/Comments.php:64
+msgid "Your email address will not be published. Required fields are marked with *."
+msgstr ""
+
+#: src/Comments.php:65
+msgid "Logged in. You can leave a comment below."
+msgstr ""
+
+#: src/Customizer.php:30
+msgid "Publisher type"
+msgstr ""
+
+#: src/Customizer.php:31
+msgid "Organization name (blank = site title)"
+msgstr ""
+
+#: src/Customizer.php:32
+msgid "Telephone"
+msgstr ""
+
+#: src/Customizer.php:33
+msgid "Contact email"
+msgstr ""
+
+#: src/Customizer.php:34
+msgid "Street address"
+msgstr ""
+
+#: src/Customizer.php:35
+msgid "City"
+msgstr ""
+
+#: src/Customizer.php:36
+msgid "State / region"
+msgstr ""
+
+#: src/Customizer.php:37
+msgid "Postal code"
+msgstr ""
+
+#: src/Customizer.php:38
+msgid "Country (2-letter code)"
+msgstr ""
+
+#: src/Customizer.php:39
+msgid "Social profile URLs (one per line)"
+msgstr ""
+
+#: src/Customizer.php:41
+msgid "Default social sharing image"
+msgstr ""
+
+#: src/Customizer.php:42
+msgid "X / Twitter handle (e.g. @name)"
+msgstr ""
+
+#: src/Customizer.php:43
+msgid "Disable author archives (single-author sites)"
+msgstr ""
+
+#: src/Customizer.php:45
+msgid "Disable comments site-wide"
+msgstr ""
+
+#: src/Customizer.php:46
+msgid "Google Tag Manager ID (GTM-XXXX)"
+msgstr ""
+
+#: src/Customizer.php:47
+msgid "Google Analytics 4 ID (G-XXXX)"
+msgstr ""
+
+#: src/Customizer.php:54
+msgid "Organization & Schema"
+msgstr ""
+
+#: src/Customizer.php:55
+msgid "SEO & Social"
+msgstr ""
+
+#: src/Customizer.php:56
+msgid "Features & Tracking"
+msgstr ""
+
+#: src/Customizer.php:102
+msgid "Organization"
+msgstr ""
+
+#: src/Customizer.php:103
+msgid "Local business"
+msgstr ""
+
+#: src/Customizer.php:104
+msgid "Person"
+msgstr ""
+
+#: src/Pagination.php:29
+msgid "Previous page"
+msgstr ""
+
+#: src/Pagination.php:30
+msgid "Next page"
+msgstr ""
+
+#: src/Pagination.php:39
+msgid "Pagination"
+msgstr ""
+
+#: src/SeoMeta.php:33
+msgid "SEO"
+msgstr ""
+
+#: src/SeoMeta.php:45
+msgid "SEO title"
+msgstr ""
+
+#: src/SeoMeta.php:47
+msgid "Leave empty to use the post title and site name."
+msgstr ""
+
+#: src/SeoMeta.php:50
+msgid "Meta description"
+msgstr ""
+
+#: src/SeoMeta.php:52
+msgid "Around 155 characters. Leave empty to use the excerpt."
+msgstr ""
+
+#: src/SeoMeta.php:57
+msgid "Ask search engines not to index this page (noindex)"
+msgstr ""
+
+#: src/Setup.php:39
+msgid "Primary Menu"
+msgstr ""
+
+#: src/Setup.php:40
+msgid "Footer Menu"
+msgstr ""
+
+#: src/Setup.php:46
+msgid "Footer 1"
+msgstr ""
+
+#: src/Setup.php:46
+msgid "Footer 2"
+msgstr ""
+
+#: src/Walkers/CommentWalker.php:18
+msgid "Your comment is awaiting moderation."
+msgstr ""
+
+#: src/Walkers/CommentWalker.php:19
+msgid "Your comment is awaiting moderation. This is a preview; your comment will be visible after it has been approved."
+msgstr ""
+
+#. translators: 1: comment date, 2: comment time
+#: src/Walkers/CommentWalker.php:45
+#, php-format
+msgid "%1$s at %2$s"
+msgstr ""
+
+#: src/Walkers/CommentWalker.php:52
+msgid "Edit"
+msgstr ""
+
+#: template-parts/archive-header.php:16
+msgid "Latest posts"
+msgstr ""
+
+#: template-parts/author-box.php:22
+msgid "Written by"
+msgstr ""
+
+#: template-parts/content-none.php:12
+msgid "Nothing matched your search. Try different keywords."
+msgstr ""
+
+#: template-parts/content-none.php:13
+msgid "There is nothing to show here yet."
+msgstr ""
+
+#: template-parts/content-page.php:28
+msgid "Page sections"
+msgstr ""
+
+#: template-parts/content-page.php:28
+#: template-parts/content-single.php:58
+msgid "Pages:"
+msgstr ""
+
+#. translators: %s: author name
+#: template-parts/content-single.php:30
+#, php-format
+msgid "By %s"
+msgstr ""
+
+#: template-parts/content-single.php:35
+msgid "Published"
+msgstr ""
+
+#: template-parts/content-single.php:39
+msgid "Updated"
+msgstr ""
+
+#: template-parts/content-single.php:58
+msgid "Post pages"
+msgstr ""
+
+#: template-parts/content-single.php:66
+msgid "Tags:"
+msgstr ""
+
+#: template-parts/content.php:27
+msgid "by"
+msgstr ""
+
+#: template-parts/content.php:36
+msgid "Read more"
+msgstr ""
+
+#: template-parts/related-posts.php:31
+msgid "Related posts"
+msgstr ""
+
+#: blocks/cards/block.json
+msgctxt "block title"
+msgid "Card grid"
+msgstr ""
+
+#: blocks/cards/block.json
+msgctxt "block description"
+msgid "A responsive grid of cards with optional image and link."
+msgstr ""
+
+#: blocks/cta/block.json
+msgctxt "block title"
+msgid "Call to action"
+msgstr ""
+
+#: blocks/cta/block.json
+msgctxt "block description"
+msgid "A short message with a button."
+msgstr ""
+
+#: blocks/faq/block.json
+msgctxt "block title"
+msgid "FAQ"
+msgstr ""
+
+#: blocks/faq/block.json
+msgctxt "block description"
+msgid "Frequently asked questions. Also outputs FAQPage structured data."
+msgstr ""
+
+#: blocks/hero/block.json
+msgctxt "block title"
+msgid "Hero"
+msgstr ""
+
+#: blocks/hero/block.json
+msgctxt "block description"
+msgid "A prominent headline section with text, buttons and an optional image."
+msgstr ""
+
+#: blocks/testimonials/block.json
+msgctxt "block title"
+msgid "Testimonials"
+msgstr ""
+
+#: blocks/testimonials/block.json
+msgctxt "block description"
+msgid "Quotes from customers or partners."
+msgstr ""
+
+#: theme.json
+msgctxt "Color name"
+msgid "Primary"
+msgstr ""
+
+#: theme.json
+msgctxt "Color name"
+msgid "Secondary"
+msgstr ""
+
+#: theme.json
+msgctxt "Color name"
+msgid "Dark"
+msgstr ""
+
+#: theme.json
+msgctxt "Color name"
+msgid "Muted"
+msgstr ""
+
+#: theme.json
+msgctxt "Color name"
+msgid "Border"
+msgstr ""
+
+#: theme.json
+msgctxt "Color name"
+msgid "Light"
+msgstr ""
+
+#: theme.json
+msgctxt "Color name"
+msgid "White"
+msgstr ""
+
+#: theme.json
+msgctxt "Font family name"
+msgid "Sans"
+msgstr ""
+
+#: theme.json
+msgctxt "Font family name"
+msgid "Serif"
+msgstr ""
+
+#: theme.json
+msgctxt "Font family name"
+msgid "Mono"
+msgstr ""
+
+#: theme.json
+msgctxt "Font size name"
+msgid "Extra Small"
+msgstr ""
+
+#: theme.json
+msgctxt "Font size name"
+msgid "Small"
+msgstr ""
+
+#: theme.json
+msgctxt "Font size name"
+msgid "Base"
+msgstr ""
+
+#: theme.json
+msgctxt "Font size name"
+msgid "Large"
+msgstr ""
+
+#: theme.json
+msgctxt "Font size name"
+msgid "Extra Large"
+msgstr ""
+
+#: theme.json
+msgctxt "Font size name"
+msgid "2XL"
+msgstr ""
+
+#: theme.json
+msgctxt "Font size name"
+msgid "3XL"
+msgstr ""
+
+#: theme.json
+msgctxt "Font size name"
+msgid "4XL"
+msgstr ""
+
+#: theme.json
+msgctxt "Font size name"
+msgid "5XL"
+msgstr ""
+
+#: theme.json
+msgctxt "Font size name"
+msgid "6XL"
+msgstr ""
+
+#: theme.json
+msgctxt "Space size name"
+msgid "1"
+msgstr ""
+
+#: theme.json
+msgctxt "Space size name"
+msgid "2"
+msgstr ""
+
+#: theme.json
+msgctxt "Space size name"
+msgid "3"
+msgstr ""
+
+#: theme.json
+msgctxt "Space size name"
+msgid "4"
+msgstr ""
+
+#: theme.json
+msgctxt "Space size name"
+msgid "5"
+msgstr ""
+
+#: theme.json
+msgctxt "Space size name"
+msgid "6"
+msgstr ""
+
+#: theme.json
+msgctxt "Space size name"
+msgid "7"
+msgstr ""
+
+#: theme.json
+msgctxt "Shadow name"
+msgid "Small"
+msgstr ""
+
+#: theme.json
+msgctxt "Shadow name"
+msgid "Medium"
+msgstr ""

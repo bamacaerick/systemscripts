@@ -11,6 +11,9 @@
   --ss-wide: var(--wp--style--global--wide-size, 80rem);
   --ss-gutter: 1.5rem;
 
+  /* Long URLs or words must wrap instead of forcing horizontal scroll (WCAG 1.4.10). */
+  overflow-wrap: break-word;
+
   display: grid;
   grid-template-columns:
     [full-start] minmax(var(--ss-gutter), 1fr)
@@ -48,9 +51,13 @@
   }
 }
 
-.entry-content,
-.editor-styles-wrapper .is-root-container,
-.block-editor-block-list__layout {
+/* :where() keeps the whole selector at zero specificity: :is() would take the highest
+   argument's specificity and beat component classes such as .ss-button. */
+:where(
+    .entry-content,
+    .editor-styles-wrapper .is-root-container,
+    .block-editor-block-list__layout
+  ) {
   color: var(--color-dark);
   font-size: var(--text-lg);
   line-height: var(--text-lg--line-height);

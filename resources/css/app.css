@@ -2,5 +2,5 @@
 @import './theme.css';
 @import './base.css';
 @import './utilities.css';
-@import './custom.css' layer(utilities);
+@import './custom.css' layer(components);
 @import './components.css' layer(components);

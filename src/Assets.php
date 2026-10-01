@@ -71,7 +71,8 @@ class Assets
             return $tag;
         }
 
-        return sprintf('<script type="module" src="%s"></script>' . "\n", esc_url($src));
+        // Rewrites the tag of an already enqueued handle, so this is not a hardcoded script.
+        return sprintf('<script type="module" src="%s"></script>' . "\n", esc_url($src)); // phpcs:ignore WordPress.WP.EnqueuedResources.NonEnqueuedScript
     }
 
     public static function missing_build_notice(): void

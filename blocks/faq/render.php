@@ -21,7 +21,7 @@ $title_id    = wp_unique_id('ss-faq-title-');
 ?>
 <section <?php echo get_block_wrapper_attributes(['class' => 'ss-faq py-8']); // phpcs:ignore WordPress.Security.EscapeOutput ?> <?php echo $has_heading ? 'aria-labelledby="' . esc_attr($title_id) . '"' : ''; ?>>
     <?php if ($has_heading): ?>
-        <<?php echo $tag; ?> id="<?php echo esc_attr($title_id); ?>" class="mb-4 text-2xl font-semibold"><?php echo esc_html($attributes['heading']); ?></<?php echo $tag; ?>>
+        <<?php echo tag_escape($tag); ?> id="<?php echo esc_attr($title_id); ?>" class="mb-4 text-2xl font-semibold"><?php echo esc_html($attributes['heading']); ?></<?php echo tag_escape($tag); ?>>
     <?php endif; ?>
 
     <div class="divide-y divide-zinc-200 border-y border-zinc-200">

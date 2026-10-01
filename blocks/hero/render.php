@@ -27,7 +27,7 @@ $reverse  = $attributes['imageSide'] === 'left' ? 'md:flex-row-reverse' : 'md:fl
                 <p class="text-sm font-semibold uppercase tracking-wide"><?php echo esc_html($attributes['eyebrow']); ?></p>
             <?php endif; ?>
 
-            <<?php echo $tag; ?> id="<?php echo esc_attr($title_id); ?>" class="text-4xl font-semibold tracking-tight text-balance md:text-6xl"><?php echo esc_html($attributes['heading']); ?></<?php echo $tag; ?>>
+            <<?php echo tag_escape($tag); ?> id="<?php echo esc_attr($title_id); ?>" class="text-4xl font-semibold tracking-tight text-balance md:text-6xl"><?php echo esc_html($attributes['heading']); ?></<?php echo tag_escape($tag); ?>>
 
             <?php if ($attributes['text'] !== ''): ?>
                 <div class="space-y-4 text-lg md:text-xl"><?php echo Blocks::paragraphs($attributes['text']); // phpcs:ignore WordPress.Security.EscapeOutput ?></div>

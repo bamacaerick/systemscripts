@@ -67,7 +67,7 @@ class Seo
                 $text = $object->post_excerpt ?: excerpt_remove_blocks(strip_shortcodes($object->post_content));
             }
         } elseif ($object instanceof \WP_Term) {
-            $text = term_description($object->term_id, $object->taxonomy);
+            $text = $object->description;
         } elseif ($object instanceof \WP_User) {
             $text = (string) get_the_author_meta('description', $object->ID);
         }

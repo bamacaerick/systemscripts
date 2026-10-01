@@ -23,6 +23,11 @@ class Comments
         }
     }
 
+    public static function enabled(): bool
+    {
+        return !Customizer::get('disable_comments');
+    }
+
     public static function disable(): void
     {
         foreach (get_post_types() as $type) {

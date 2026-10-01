@@ -110,7 +110,7 @@ class Author
         }
 
         if (isset($_POST['ss_same_as'])) {
-            update_user_meta($user_id, 'ss_same_as', Customizer::sanitize_urls(wp_unslash($_POST['ss_same_as'])));
+            update_user_meta($user_id, 'ss_same_as', Customizer::sanitize_urls(sanitize_textarea_field(wp_unslash($_POST['ss_same_as']))));
         }
         // phpcs:enable
     }

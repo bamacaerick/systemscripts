@@ -28,7 +28,10 @@ class Security
             return;
         }
 
-        if (isset($_GET['author']) && is_numeric(wp_unslash($_GET['author']))) { // phpcs:ignore WordPress.Security.NonceVerification
+        // phpcs:ignore WordPress.Security.NonceVerification -- read-only check on a public request.
+        $author = isset($_GET['author']) ? sanitize_text_field(wp_unslash($_GET['author'])) : '';
+
+        if ($author !== '' && is_numeric($author)) {
             wp_safe_redirect(home_url('/'), 301);
             exit;
         }

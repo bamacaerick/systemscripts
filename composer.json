@@ -25,7 +25,8 @@
     },
     "scripts": {
         "lint": "phpcs",
-        "fix": "phpcbf"
+        "fix": "phpcbf",
+        "i18n": "wp i18n make-pot . languages/systemscripts.pot --slug=systemscripts --domain=systemscripts --exclude=node_modules,dist,vendor,resources --skip-js"
     },
     "config": {
         "allow-plugins": {

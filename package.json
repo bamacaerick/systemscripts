@@ -12,10 +12,18 @@
 	},
 	"scripts": {
 		"dev": "vite",
-		"build": "vite build"
+		"build": "vite build",
+		"lint:js": "eslint resources blocks",
+		"lint:php": "composer lint",
+		"lint": "pnpm lint:js && pnpm lint:php",
+		"a11y": "pnpm dlx pa11y-ci",
+		"i18n": "composer i18n"
 	},
 	"devDependencies": {
+		"@eslint/js": "^10.0.1",
 		"@tailwindcss/vite": "^4.3.3",
+		"eslint": "^10.11.0",
+		"globals": "^17.13.0",
 		"tailwindcss": "^4.3.3",
 		"vite": "^8.3.1"
 	}

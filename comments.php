@@ -15,8 +15,9 @@ if (post_password_required()) {
         <h2 class="comments-title mb-8 text-3xl font-medium">
             <?php
             printf(
+                /* translators: %1$s: number of comments */
                 esc_html(_nx(
-                    'One comment',
+                    '%1$s comment',
                     '%1$s comments',
                     get_comments_number(),
                     'comments title',

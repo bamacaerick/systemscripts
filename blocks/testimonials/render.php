@@ -19,9 +19,9 @@ $tag         = Blocks::heading_tag($attributes['level']);
 $title_id    = wp_unique_id('ss-testimonials-title-');
 ?>
 <section <?php echo get_block_wrapper_attributes(['class' => 'ss-testimonials py-12']); // phpcs:ignore WordPress.Security.EscapeOutput ?> <?php echo $has_heading ? 'aria-labelledby="' . esc_attr($title_id) . '"' : ''; ?>>
-    <div class="mx-auto max-w-(--breakpoint-xl) space-y-8 px-6">
+    <div class="mx-auto max-w-(--breakpoint-xl) space-y-8 in-[.alignfull]:px-6">
         <?php if ($has_heading): ?>
-            <<?php echo $tag; ?> id="<?php echo esc_attr($title_id); ?>" class="text-3xl font-semibold md:text-4xl"><?php echo esc_html($attributes['heading']); ?></<?php echo $tag; ?>>
+            <<?php echo tag_escape($tag); ?> id="<?php echo esc_attr($title_id); ?>" class="text-3xl font-semibold md:text-4xl"><?php echo esc_html($attributes['heading']); ?></<?php echo tag_escape($tag); ?>>
         <?php endif; ?>
 
         <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
