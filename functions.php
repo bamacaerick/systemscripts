@@ -1,37 +1,30 @@
 <?php
+/**
+ * SystemScripts theme bootstrap.
+ *
+ * @package SystemScripts
+ */
 
-if (is_file(__DIR__.'/vendor/autoload_packages.php')) {
-    require_once __DIR__.'/vendor/autoload_packages.php';
-}
+defined('ABSPATH') || exit;
 
-function tailpress(): TailPress\Framework\Theme
-{
-    return TailPress\Framework\Theme::instance()
-        ->assets(fn($manager) => $manager
-            ->withCompiler(new TailPress\Framework\Assets\ViteCompiler, fn($compiler) => $compiler
-                ->registerAsset('resources/css/app.css')
-                ->registerAsset('resources/js/app.js')
-                ->editorStyleFile('resources/css/editor-style.css')
-            )
-            ->enqueueAssets()
-        )
-        ->features(fn($manager) => $manager->add(TailPress\Framework\Features\MenuOptions::class))
-        ->menus(fn($manager) => $manager->add('primary', __( 'Primary Menu', 'tailpress')))
-        ->themeSupport(fn($manager) => $manager->add([
-            'title-tag',
-            'custom-logo',
-            'post-thumbnails',
-            'align-wide',
-            'wp-block-styles',
-            'responsive-embeds',
-            'html5' => [
-                'search-form',
-                'comment-form',
-                'comment-list',
-                'gallery',
-                'caption',
-            ]
-        ]));
-}
+define('SS_VERSION', wp_get_theme()->get('Version'));
+define('SS_DIR', get_template_directory());
+define('SS_URI', get_template_directory_uri());
 
-tailpress();
+// Minimal PSR-4 autoloader (SystemScripts\ => src/), so Composer is not needed in production.
+spl_autoload_register(static function (string $class): void {
+    $prefix = 'SystemScripts\\';
+
+    if (strncmp($class, $prefix, strlen($prefix)) !== 0) {
+        return;
+    }
+
+    $file = SS_DIR . '/src/' . str_replace('\\', '/', substr($class, strlen($prefix))) . '.php';
+
+    if (is_file($file)) {
+        require_once $file;
+    }
+});
+
+SystemScripts\Setup::boot();
+SystemScripts\Assets::boot();
