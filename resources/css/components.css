@@ -31,6 +31,26 @@
   }
 }
 
+/* Buttons on dark / primary surfaces (blocks) */
+.ss-button--inverse {
+  background-color: var(--color-white);
+  color: var(--color-dark);
+
+  &:hover {
+    background-color: var(--color-light);
+  }
+
+  &.ss-button--secondary {
+    background-color: transparent;
+    color: var(--color-white);
+    border-color: var(--color-white);
+
+    &:hover {
+      background-color: rgb(255 255 255 / 0.12);
+    }
+  }
+}
+
 /* paginate_links() output (see SystemScripts\Pagination) */
 .page-numbers {
   display: inline-flex;

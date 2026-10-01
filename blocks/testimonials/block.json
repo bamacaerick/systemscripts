@@ -1,0 +1,25 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "ss/testimonials",
+  "title": "Testimonials",
+  "category": "ss",
+  "icon": "format-quote",
+  "description": "Quotes from customers or partners.",
+  "textdomain": "systemscripts",
+  "supports": { "align": ["wide", "full"], "anchor": true, "html": false },
+  "render": "file:./render.php",
+  "ss": {
+    "fields": [
+      { "name": "heading", "label": "Heading (optional)", "type": "text" },
+      { "name": "level", "label": "Heading level", "type": "select", "default": "h2",
+        "options": [ { "label": "H2", "value": "h2" }, { "label": "H3", "value": "h3" } ] },
+      { "name": "items", "label": "Testimonials", "type": "repeater", "itemLabel": "Testimonial",
+        "fields": [
+          { "name": "quote", "label": "Quote", "type": "textarea" },
+          { "name": "name", "label": "Name", "type": "text" },
+          { "name": "role", "label": "Role or company", "type": "text" }
+        ] }
+    ]
+  }
+}

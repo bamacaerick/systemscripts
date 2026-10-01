@@ -1,0 +1,24 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "ss/cta",
+  "title": "Call to action",
+  "category": "ss",
+  "icon": "megaphone",
+  "description": "A short message with a button.",
+  "textdomain": "systemscripts",
+  "supports": { "align": ["wide", "full"], "anchor": true, "html": false },
+  "render": "file:./render.php",
+  "ss": {
+    "fields": [
+      { "name": "heading", "label": "Heading", "type": "text" },
+      { "name": "level", "label": "Heading level", "type": "select", "default": "h2",
+        "options": [ { "label": "H2", "value": "h2" }, { "label": "H3", "value": "h3" }, { "label": "H4", "value": "h4" } ] },
+      { "name": "text", "label": "Text", "type": "textarea" },
+      { "name": "buttonLabel", "label": "Button label", "type": "text" },
+      { "name": "buttonUrl", "label": "Button URL", "type": "url" },
+      { "name": "style", "label": "Background", "type": "select", "default": "primary",
+        "options": [ { "label": "Primary", "value": "primary" }, { "label": "Dark", "value": "dark" }, { "label": "Light", "value": "light" } ] }
+    ]
+  }
+}

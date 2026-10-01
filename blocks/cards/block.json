@@ -1,0 +1,29 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "ss/cards",
+  "title": "Card grid",
+  "category": "ss",
+  "icon": "grid-view",
+  "description": "A responsive grid of cards with optional image and link.",
+  "textdomain": "systemscripts",
+  "supports": { "align": ["wide", "full"], "anchor": true, "html": false },
+  "render": "file:./render.php",
+  "ss": {
+    "fields": [
+      { "name": "heading", "label": "Section heading (optional)", "type": "text" },
+      { "name": "level", "label": "Heading level", "type": "select", "default": "h2",
+        "options": [ { "label": "H2", "value": "h2" }, { "label": "H3", "value": "h3" } ] },
+      { "name": "intro", "label": "Intro text (optional)", "type": "textarea" },
+      { "name": "columns", "label": "Columns", "type": "select", "default": "3",
+        "options": [ { "label": "2", "value": "2" }, { "label": "3", "value": "3" }, { "label": "4", "value": "4" } ] },
+      { "name": "items", "label": "Cards", "type": "repeater", "itemLabel": "Card",
+        "fields": [
+          { "name": "title", "label": "Title", "type": "text" },
+          { "name": "text", "label": "Text", "type": "textarea" },
+          { "name": "url", "label": "Link URL (makes the whole card a link)", "type": "url" },
+          { "name": "image", "label": "Image", "type": "image" }
+        ] }
+    ]
+  }
+}

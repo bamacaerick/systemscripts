@@ -33,3 +33,7 @@ SystemScripts\Security::boot();
 SystemScripts\Comments::boot();
 SystemScripts\Author::boot();
 SystemScripts\Analytics::boot();
+SystemScripts\Seo::boot();
+SystemScripts\SeoMeta::boot();
+SystemScripts\Schema::boot();
+SystemScripts\Blocks::boot();

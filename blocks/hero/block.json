@@ -1,0 +1,39 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "ss/hero",
+  "title": "Hero",
+  "category": "ss",
+  "icon": "cover-image",
+  "description": "A prominent headline section with text, buttons and an optional image.",
+  "textdomain": "systemscripts",
+  "supports": { "align": ["wide", "full"], "anchor": true, "html": false },
+  "render": "file:./render.php",
+  "ss": {
+    "fields": [
+      { "name": "eyebrow", "label": "Eyebrow (small text above the heading)", "type": "text" },
+      { "name": "heading", "label": "Heading", "type": "text" },
+      { "name": "level", "label": "Heading level", "type": "select", "default": "h2",
+        "options": [
+          { "label": "H1 (once per page, only if the page title is not shown)", "value": "h1" },
+          { "label": "H2", "value": "h2" },
+          { "label": "H3", "value": "h3" }
+        ] },
+      { "name": "text", "label": "Text", "type": "textarea" },
+      { "name": "primaryLabel", "label": "Primary button label", "type": "text" },
+      { "name": "primaryUrl", "label": "Primary button URL", "type": "url" },
+      { "name": "secondaryLabel", "label": "Secondary button label", "type": "text" },
+      { "name": "secondaryUrl", "label": "Secondary button URL", "type": "url" },
+      { "name": "image", "label": "Image (set alt text in the media library; leave alt empty if decorative)", "type": "image" },
+      { "name": "imageSide", "label": "Image position", "type": "select", "default": "right",
+        "options": [ { "label": "Right", "value": "right" }, { "label": "Left", "value": "left" } ] },
+      { "name": "style", "label": "Background", "type": "select", "default": "light",
+        "options": [
+          { "label": "Light", "value": "light" },
+          { "label": "Dark", "value": "dark" },
+          { "label": "Primary", "value": "primary" },
+          { "label": "None", "value": "none" }
+        ] }
+    ]
+  }
+}
