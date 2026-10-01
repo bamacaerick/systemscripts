@@ -1,31 +1,35 @@
 {
     "$schema": "https://getcomposer.org/schema.json",
-    "name": "tailpress/tailpress",
-    "description": "The Tailwind CSS powered WordPress boilerplate theme.",
-    "type": "project",
+    "name": "systemscripts/systemscripts",
+    "description": "SystemScripts base WordPress theme with Tailwind CSS and Vite.",
+    "type": "wordpress-theme",
     "license": "MIT",
     "authors": [
         {
-            "name": "Jeffrey van Rossum",
-            "email": "jeffrey@vanrossum.dev"
+            "name": "SystemScripts Team",
+            "email": "bamacaerick@gmail.com",
+            "homepage": "https://www.linkedin.com/in/bamacaerick/"
         }
     ],
     "autoload": {
         "psr-4": {
-            "TailPress\\": "src/"
+            "SystemScripts\\": "src/"
         }
     },
     "require": {
-        "php": ">=8.0.2",
-        "tailpress/framework": "^5.0.4",
-        "automattic/jetpack-autoloader": "^2.10"
+        "php": ">=8.1"
     },
     "require-dev": {
-        "tailpress/cli": "^5.0"
+        "wp-coding-standards/wpcs": "^3.1",
+        "dealerdirect/phpcodesniffer-composer-installer": "^1.0"
+    },
+    "scripts": {
+        "lint": "phpcs",
+        "fix": "phpcbf"
     },
     "config": {
         "allow-plugins": {
-            "automattic/jetpack-autoloader": true
+            "dealerdirect/phpcodesniffer-composer-installer": true
         }
     }
 }

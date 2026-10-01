@@ -1,6 +1,10 @@
 /node_modules
 /dist
 /vendor
+/hot
+.env
+.env.*
+!.env.example
 /.fleet
 /.idea
 /.nova

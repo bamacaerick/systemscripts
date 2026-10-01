@@ -1,23 +1,22 @@
 {
-	"name": "tailpress",
-	"version": "5.0.0",
-	"description": "Boilerplate WordPress theme with Tailwind CSS.",
-	"author": "Jeffrey van Rossum",
-	"repository": {
-		"type": "git",
-		"url": "https://github.com/tailpress/tailpress"
-	},
-	"theme_uri": "https://github.com/tailpress/tailpress",
-	"author_uri": "https://tailpress.io",
-	"text_domain": "tailpress",
+	"name": "systemscripts",
+	"version": "0.1.0",
+	"private": true,
+	"description": "SystemScripts base WordPress theme with Tailwind CSS and Vite.",
+	"author": "SystemScripts Team <bamacaerick@gmail.com> (https://www.linkedin.com/in/bamacaerick/)",
 	"license": "MIT",
+	"packageManager": "pnpm@10.33.2",
+	"engines": {
+		"node": ">=24",
+		"pnpm": ">=10"
+	},
 	"scripts": {
 		"dev": "vite",
 		"build": "vite build"
 	},
 	"devDependencies": {
-		"tailwindcss": "^4.0.0",
-		"vite": "^6.3.2",
-		"@tailwindcss/vite": "^4.0.0"
+		"@tailwindcss/vite": "^4.3.3",
+		"tailwindcss": "^4.3.3",
+		"vite": "^8.3.1"
 	}
 }
