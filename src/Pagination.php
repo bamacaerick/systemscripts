@@ -1,6 +1,6 @@
 <?php
 
-namespace TailPress;
+namespace SystemScripts;
 
 use WP_Query;
 

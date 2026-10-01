@@ -13,9 +13,9 @@
 			<div class="max-w-sm m-8">
 				<div class="text-5xl md:text-15xl text-dark border-light border-b">404</div>
 				<div class="w-16 h-1 bg-purple-light my-3 md:my-6"></div>
-				<p class="text-dark/90 text-2xl md:text-3xl font-light leading-relaxed mb-8"><?php _e( 'Sorry, the page you are looking for could not be found.', 'tailpress' ); ?></p>
+				<p class="text-dark/90 text-2xl md:text-3xl font-light leading-relaxed mb-8"><?php _e( 'Sorry, the page you are looking for could not be found.', 'systemscripts' ); ?></p>
 				<a href="<?php echo get_bloginfo( 'url' ); ?>" class="inline-flex rounded-full px-4 py-1.5 text-sm font-semibold transition bg-dark text-white hover:bg-dark/90 !no-underline">
-					<?php _e( 'Go Home', 'tailpress' ); ?>
+					<?php _e( 'Go Home', 'systemscripts' ); ?>
 				</a>
 			</div>
 		</div>

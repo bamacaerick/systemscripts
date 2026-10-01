@@ -1,22 +1,41 @@
-<p align="center"><a href="https://tailpress.io" target="_blank"><img src="https://raw.githubusercontent.com/tailpress/art/main/logo.svg" width="200" alt="TailPress"></a></p>
+# SystemScripts
 
-<p align="center">
-<a href="https://github.com/tailpress/tailpress/releases/"><img src="https://img.shields.io/github/release/tailpress/tailpress?include_prereleases=&sort=semver" alt="GitHub release"></a>
-<a href="https://packagist.org/packages/tailpress/tailpress"><img src="https://img.shields.io/packagist/dt/tailpress/tailpress" alt="Total Downloads"></a>
-<a href="#license"><img src="https://img.shields.io/badge/License-MIT-blue" alt="License"></a>
-</p>
+A base WordPress theme for all SystemScripts projects. Classic PHP theme with `theme.json`, built with
+[Tailwind CSS](https://tailwindcss.com) v4 and [Vite](https://vite.dev).
 
-## About TailPress
+Planned: native custom blocks, schema.org JSON-LD graph, SEO, and WCAG 2.2 AA accessibility.
+No paid plugins required.
 
-[TailPress](https://tailpress.io) is your go-to starting point for your next [Tailwind CSS](https://tailwindcss.com) powered [WordPress](https://wordpress.org) theme.
+## Requirements
 
-To get started, have a look at the [documentation](https://tailpress.io/docs).
+- WordPress 6.5+, PHP 8.1+
+- Node.js 24 LTS (see `.nvmrc`) and [pnpm](https://pnpm.io) 10+
 
-## Contributors
+## Getting started
 
-- [Jeffrey van Rossum](https://github.com/jeffreyvr)
-- [All contributors](https://github.com/tailpress/tailpress/graphs/contributors)
+```bash
+pnpm install
+pnpm dev     # Vite dev server (writes a `hot` file so PHP loads assets from it)
+pnpm build   # production build into dist/
+```
+
+The theme folder should be named `systemscripts`; the built asset URLs are derived from the folder name.
+Copy `.env.example` to `.env` to change the dev server port or URL.
+
+## Conventions
+
+- Slug and text domain: `systemscripts`
+- PHP namespace: `SystemScripts\` (autoloaded from `src/`)
+- Function, hook and filter prefix: `ss_`
+
+## Credits
+
+Originally forked from [TailPress](https://tailpress.io) by Jeffrey van Rossum (MIT).
+
+## Authors
+
+SystemScripts Team — [bamacaerick](https://www.linkedin.com/in/bamacaerick/)
 
 ## License
 
-MIT. Please see the [License File](/LICENSE) for more information.
+MIT. See [LICENSE](LICENSE).

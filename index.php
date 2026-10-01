@@ -2,7 +2,7 @@
 /**
  * Main template file for displaying posts.
  *
- * @package TailPress
+ * @package SystemScripts
  */
 
 get_header();
@@ -31,37 +31,37 @@ get_header();
 		<?php elseif (is_author()): ?>
 			<header class="mb-8">
 				<h1 class="text-3xl font-semibold">
-					<?php printf(__('Posts by %s', 'tailpress'), get_the_author()); ?>
+					<?php printf(__('Posts by %s', 'systemscripts'), get_the_author()); ?>
 				</h1>
 			</header>
 		<?php elseif (is_day()): ?>
 			<header class="mb-8">
 				<h1 class="text-3xl font-semibold">
-					<?php printf(__('Daily Archives: %s', 'tailpress'), get_the_date()); ?>
+					<?php printf(__('Daily Archives: %s', 'systemscripts'), get_the_date()); ?>
 				</h1>
 			</header>
 		<?php elseif (is_month()): ?>
 			<header class="mb-8">
 				<h1 class="text-3xl font-semibold">
-					<?php printf(__('Monthly Archives: %s', 'tailpress'), get_the_date('F Y')); ?>
+					<?php printf(__('Monthly Archives: %s', 'systemscripts'), get_the_date('F Y')); ?>
 				</h1>
 			</header>
 		<?php elseif (is_year()): ?>
 			<header class="mb-8">
 				<h1 class="text-3xl font-semibold">
-					<?php printf(__('Yearly Archives: %s', 'tailpress'), get_the_date('Y')); ?>
+					<?php printf(__('Yearly Archives: %s', 'systemscripts'), get_the_date('Y')); ?>
 				</h1>
 			</header>
 		<?php elseif (is_search()): ?>
 			<header class="mb-8">
 				<h1 class="text-3xl font-semibold">
-					<?php printf(__('Search results for: %s', 'tailpress'), get_search_query()); ?>
+					<?php printf(__('Search results for: %s', 'systemscripts'), get_search_query()); ?>
 				</h1>
 			</header>
 		<?php elseif (is_404()): ?>
 			<header class="mb-8">
 				<h1 class="text-3xl font-semibold">
-					<?php _e('Page Not Found', 'tailpress'); ?>
+					<?php _e('Page Not Found', 'systemscripts'); ?>
 				</h1>
 			</header>
 		<?php endif; ?>
@@ -72,7 +72,7 @@ get_header();
             <?php get_template_part('template-parts/content', is_singular() ? 'single' : ''); ?>
         <?php endwhile; ?>
 
-        <?php TailPress\Pagination::render(); ?>
+        <?php SystemScripts\Pagination::render(); ?>
     <?php endif; ?>
 </div>
 

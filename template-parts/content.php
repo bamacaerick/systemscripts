@@ -4,7 +4,7 @@
             <div class="pt-10 lg:w-2/3 lg:flex-none lg:px-4 lg:pt-0">
             <h2 class="text-2xl font-semibold text-zinc-950"><a href="<?php the_permalink(); ?>" class="!no-underline"><?php the_title(); ?></a></h2>
             <dl class="lg:absolute lg:top-0 lg:left-0 lg:w-1/3 lg:px-4">
-                <dt class="sr-only"><?php _e('Published', 'tailpress'); ?></dt>
+                <dt class="sr-only"><?php _e('Published', 'systemscripts'); ?></dt>
                 <dd class="absolute top-0 left-0 text-sm text-zinc-950 lg:static">
                     <time datetime="<?php echo get_the_date( 'c' ); ?>" itemprop="datePublished" class="text-sm text-zinc-700"><?php echo get_the_date(); ?></time>
                 </dd>
@@ -12,7 +12,7 @@
                 <dd class="mt-6 flex gap-x-4">
                     <div class="flex-none overflow-hidden rounded-xl bg-light">
                         <?php
-                            echo get_avatar(get_the_author_meta( 'ID' ), 32, '', esc_attr(sprintf(__('Avatar for %s', 'tailpress'), get_the_author())), [
+                            echo get_avatar(get_the_author_meta( 'ID' ), 32, '', esc_attr(sprintf(__('Avatar for %s', 'systemscripts'), get_the_author())), [
                                 'class' => 'h-12 w-12 object-cover grayscale',
                                 'style' => 'style="color: transparent;"'
                             ]);
@@ -26,8 +26,8 @@
             <div class="mt-6 max-w-2xl text-base text-zinc-600">
                 <?php the_excerpt(); ?>
             </div>
-            <a class="!no-underline mt-8 inline-flex rounded-full bg-zinc-950 px-4 py-1.5 text-sm font-semibold text-white transition hover:bg-zinc-800" aria-label="<?php echo esc_attr(sprintf(__('Read more: %s', 'tailpress'), get_the_title())); ?>" href="<?php the_permalink(); ?>">
-                <?php _e('Read more', 'tailpress'); ?>
+            <a class="!no-underline mt-8 inline-flex rounded-full bg-zinc-950 px-4 py-1.5 text-sm font-semibold text-white transition hover:bg-zinc-800" aria-label="<?php echo esc_attr(sprintf(__('Read more: %s', 'systemscripts'), get_the_title())); ?>" href="<?php the_permalink(); ?>">
+                <?php _e('Read more', 'systemscripts'); ?>
             </a>
         </div>
     </div>
