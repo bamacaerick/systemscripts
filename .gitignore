@@ -2,6 +2,11 @@
 /dist
 /vendor
 /hot
+/coverage
+/debug.log
+/.eslintcache
+/.phpcs-cache
+/.vite
 .env
 .env.*
 !.env.example
@@ -10,3 +15,10 @@
 /.nova
 /.vscode
 /.zed
+/.claude/settings.local.json
+
+# Local logs and operating-system files.
+*.log
+.DS_Store
+Thumbs.db
+Desktop.ini
