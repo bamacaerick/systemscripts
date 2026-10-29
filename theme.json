@@ -11,16 +11,16 @@
       "defaultPalette": false,
       "defaultGradients": false,
       "palette": [
-        {
-          "name": "Primary",
-          "slug": "primary",
-          "color": "#1D4ED8"
-        },
-        {
-          "name": "Secondary",
-          "slug": "secondary",
-          "color": "#B45309"
-        },
+        { "name": "Primary 50", "slug": "primary-50", "color": "#EFF6FF" },
+        { "name": "Primary 100", "slug": "primary-100", "color": "#DBEAFE" },
+        { "name": "Primary", "slug": "primary", "color": "#1D4ED8" },
+        { "name": "Primary 600", "slug": "primary-600", "color": "#1E40AF" },
+        { "name": "Primary 700", "slug": "primary-700", "color": "#1E3A8A" },
+        { "name": "Secondary 50", "slug": "secondary-50", "color": "#FFF7ED" },
+        { "name": "Secondary 100", "slug": "secondary-100", "color": "#FFEDD5" },
+        { "name": "Secondary", "slug": "secondary", "color": "#B45309" },
+        { "name": "Secondary 600", "slug": "secondary-600", "color": "#9A3412" },
+        { "name": "Secondary 700", "slug": "secondary-700", "color": "#7C2D12" },
         {
           "name": "Dark",
           "slug": "dark",
@@ -68,6 +68,14 @@
         }
       ],
       "fontSizes": [
+        { "name": "Hero", "slug": "hero", "size": "clamp(2.75rem, 6vw, 4.75rem)" },
+        { "name": "Heading 1", "slug": "h-1", "size": "clamp(2.25rem, 4vw, 3rem)" },
+        { "name": "Heading 2", "slug": "h-2", "size": "clamp(1.875rem, 3vw, 2.25rem)" },
+        { "name": "Heading 3", "slug": "h-3", "size": "1.875rem" },
+        { "name": "Heading 4", "slug": "h-4", "size": "1.5rem" },
+        { "name": "Heading 5", "slug": "h-5", "size": "1.25rem" },
+        { "name": "Heading 6", "slug": "h-6", "size": "1rem" },
+        { "name": "Legal", "slug": "legal", "size": "0.75rem" },
         {
           "name": "Extra Small",
           "slug": "xs",

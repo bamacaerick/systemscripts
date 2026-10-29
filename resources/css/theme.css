@@ -11,8 +11,16 @@
     --breakpoint-xl: 1280px;
     --breakpoint-2xl: 1440px;
 
+    --color-primary-50: var(--wp--preset--color--primary-50, #eff6ff);
+    --color-primary-100: var(--wp--preset--color--primary-100, #dbeafe);
     --color-primary: var(--wp--preset--color--primary, #1d4ed8);
+    --color-primary-600: var(--wp--preset--color--primary-600, #1e40af);
+    --color-primary-700: var(--wp--preset--color--primary-700, #1e3a8a);
+    --color-secondary-50: var(--wp--preset--color--secondary-50, #fff7ed);
+    --color-secondary-100: var(--wp--preset--color--secondary-100, #ffedd5);
     --color-secondary: var(--wp--preset--color--secondary, #b45309);
+    --color-secondary-600: var(--wp--preset--color--secondary-600, #9a3412);
+    --color-secondary-700: var(--wp--preset--color--secondary-700, #7c2d12);
     --color-dark: var(--wp--preset--color--dark, #18181b);
     --color-muted: var(--wp--preset--color--muted, #52525b);
     --color-border: var(--wp--preset--color--border, #71717a);
@@ -23,6 +31,14 @@
     --font-serif: var(--wp--preset--font-family--serif, ui-serif, Georgia, serif);
     --font-mono: var(--wp--preset--font-family--mono, ui-monospace, monospace);
 
+    --text-hero: var(--wp--preset--font-size--hero, clamp(2.75rem, 6vw, 4.75rem));
+    --text-h1: var(--wp--preset--font-size--h-1, clamp(2.25rem, 4vw, 3rem));
+    --text-h2: var(--wp--preset--font-size--h-2, clamp(1.875rem, 3vw, 2.25rem));
+    --text-h3: var(--wp--preset--font-size--h-3, 1.875rem);
+    --text-h4: var(--wp--preset--font-size--h-4, 1.5rem);
+    --text-h5: var(--wp--preset--font-size--h-5, 1.25rem);
+    --text-h6: var(--wp--preset--font-size--h-6, 1rem);
+    --text-legal: var(--wp--preset--font-size--legal, 0.75rem);
     --text-xs: var(--wp--preset--font-size--xs, 0.75rem);
     --text-sm: var(--wp--preset--font-size--sm, 0.875rem);
     --text-base: var(--wp--preset--font-size--base, 1rem);
