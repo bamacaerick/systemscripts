@@ -17,6 +17,10 @@
       { "name": "text", "label": "Text", "type": "textarea" },
       { "name": "buttonLabel", "label": "Button label", "type": "text" },
       { "name": "buttonUrl", "label": "Button URL", "type": "url" },
+      { "name": "buttonAppearance", "label": "Appearance", "type": "select", "default": "primary", "options": [ { "label": "Button", "value": "primary" }, { "label": "Secondary button", "value": "secondary" }, { "label": "Text link", "value": "link" } ] },
+      { "name": "buttonNewTab", "label": "Open link in a new tab", "type": "toggle", "default": false },
+      { "name": "buttonWhatsappText", "label": "WhatsApp default message (for WhatsApp URLs)", "type": "text" },
+      { "name": "buttonIcon", "label": "Icon", "type": "select", "default": "none", "options": [ { "label": "None", "value": "none" }, { "label": "Arrow left", "value": "arrow-left" }, { "label": "Arrow right", "value": "arrow-right" }, { "label": "External link", "value": "external" }, { "label": "WhatsApp", "value": "whatsapp" } ] },
       { "name": "style", "label": "Background", "type": "select", "default": "primary",
         "options": [ { "label": "Primary", "value": "primary" }, { "label": "Dark", "value": "dark" }, { "label": "Light", "value": "light" } ] }
     ]

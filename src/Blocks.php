@@ -141,15 +141,71 @@ class Blocks
         return $text === '' ? '' : wpautop(esc_html($text));
     }
 
-    public static function button(string $label, string $url, bool $secondary = false, bool $inverse = false): string
+    public static function button(string $label, string $url, bool $secondary = false, bool $inverse = false, array $options = []): string
     {
         if ($label === '' || $url === '') {
             return '';
         }
 
-        $class = 'ss-button' . ($secondary ? ' ss-button--secondary' : '') . ($inverse ? ' ss-button--inverse' : '');
+        $variant = $options['variant'] ?? ($secondary ? 'secondary' : 'primary');
+        if (!in_array($variant, ['primary', 'secondary', 'link'], true)) {
+            $variant = 'primary';
+        }
 
-        return sprintf('<a class="%s" href="%s">%s</a>', esc_attr($class), esc_url($url), esc_html($label));
+        $class = $variant === 'link'
+            ? 'ss-link-button'
+            : 'ss-button' . ($variant === 'secondary' ? ' ss-button--secondary' : '') . ($inverse ? ' ss-button--inverse' : '');
+
+        $target = !empty($options['new_tab']) ? '_blank' : '_self';
+        $rel    = $target === '_blank' ? 'noopener noreferrer' : '';
+        $url    = self::button_url($url, (string) ($options['whatsapp_text'] ?? ''));
+        $icon   = self::button_icon((string) ($options['icon'] ?? ''));
+        $side   = ($options['icon_position'] ?? 'after') === 'before' ? 'before' : 'after';
+        $iconed = $icon === '' ? esc_html($label) : ($side === 'before'
+            ? $icon . '<span>' . esc_html($label) . '</span>'
+            : '<span>' . esc_html($label) . '</span>' . $icon);
+
+        return sprintf(
+            '<a class="%s" href="%s" target="%s"%s>%s</a>',
+            esc_attr($class),
+            esc_url($url),
+            esc_attr($target),
+            $rel === '' ? '' : ' rel="' . esc_attr($rel) . '"',
+            $iconed
+        );
+    }
+
+    private static function button_url(string $url, string $whatsapp_text): string
+    {
+        if ($whatsapp_text === '') {
+            return $url;
+        }
+
+        $host = strtolower((string) wp_parse_url($url, PHP_URL_HOST));
+        if (!in_array($host, ['wa.me', 'api.whatsapp.com', 'web.whatsapp.com', 'www.whatsapp.com', 'whatsapp.com'], true)) {
+            return $url;
+        }
+
+        $separator = str_contains($url, '?') ? '&' : '?';
+        $message_parameter = $host === 'wa.me' ? 'text' : 'text';
+
+        return $url . $separator . $message_parameter . '=' . rawurlencode($whatsapp_text);
+    }
+
+    private static function button_icon(string $icon): string
+    {
+        if (!in_array($icon, ['arrow-left', 'arrow-right', 'external', 'whatsapp'], true)) {
+            return '';
+        }
+
+        $paths = [
+            'arrow-left' => '<path d="M19 12H5m6 6-6-6 6-6"/>',
+            'arrow-right' => '<path d="M5 12h14m-6-6 6 6-6 6"/>',
+            'external' => '<path d="M14 5h5v5M10 14 19 5M19 14v5H5V5h5"/>',
+            'whatsapp' => '<path d="M21 12a9 9 0 0 1-13.5 7.8L3 21l1.2-4.3A9 9 0 1 1 21 12Z"/><path d="M8.5 8.5c.3 3.3 3.7 6.7 7 7l1-1.5-2.3-1-1 1c-1.4-.7-2.2-1.5-2.9-2.9l1-1-1-2.3Z"/>',
+        ];
+
+        return '<svg class="ss-button__icon" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">' . $paths[$icon] . '</svg>';
     }
 
     /**

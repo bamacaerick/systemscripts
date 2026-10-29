@@ -22,6 +22,11 @@ $title_id = wp_unique_id('ss-cta-title-');
         <?php if ($attributes['text'] !== ''): ?>
             <div class="text-lg"><?php echo Blocks::paragraphs($attributes['text']); // phpcs:ignore WordPress.Security.EscapeOutput ?></div>
         <?php endif; ?>
-        <?php echo Blocks::button($attributes['buttonLabel'], $attributes['buttonUrl'], false, $dark); // phpcs:ignore WordPress.Security.EscapeOutput ?>
+        <?php echo Blocks::button($attributes['buttonLabel'], $attributes['buttonUrl'], false, $dark, [
+            'variant' => $attributes['buttonAppearance'],
+            'new_tab' => $attributes['buttonNewTab'],
+            'whatsapp_text' => $attributes['buttonWhatsappText'],
+            'icon' => $attributes['buttonIcon'],
+        ]); // phpcs:ignore WordPress.Security.EscapeOutput ?>
     </div>
 </section>

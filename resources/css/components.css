@@ -5,19 +5,31 @@
   align-items: center;
   justify-content: center;
   gap: 0.5rem;
+  border: 1px solid transparent;
   border-radius: var(--radius-full, 9999px);
-  background-color: var(--color-dark);
+  background-color: var(--color-primary);
+  box-shadow: none;
   color: var(--color-white);
   padding: 0.5rem 1.25rem;
   font-size: var(--text-sm);
   font-weight: var(--font-weight-semibold);
   text-decoration-line: none;
-  transition: background-color 0.15s;
+  transition: background-color 0.15s, border-color 0.15s, box-shadow 0.15s;
   min-height: 2.75rem; /* >= 24px target size (WCAG 2.5.8) */
 
   &:hover {
-    background-color: var(--color-primary);
+    background-color: var(--color-primary-700);
     text-decoration-line: none;
+  }
+
+  &:focus-visible {
+    outline: 3px solid var(--color-primary);
+    outline-offset: 3px;
+  }
+
+  &:active {
+    background-color: var(--color-primary-700);
+    transform: translateY(1px);
   }
 
   &.ss-button--secondary {
@@ -28,7 +40,33 @@
     &:hover {
       background-color: var(--color-light);
     }
+
+    &:active {
+      background-color: var(--color-primary-100);
+    }
   }
+}
+
+  .ss-button__icon {
+    width: 1.25em;
+    height: 1.25em;
+    flex: 0 0 auto;
+  }
+
+.ss-link-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  min-height: 2.75rem;
+  color: var(--color-primary);
+  font-weight: var(--font-weight-semibold);
+  text-decoration-line: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.2em;
+
+  &:visited { color: var(--color-secondary-700); }
+  &:hover { color: var(--color-primary-700); text-decoration-thickness: 2px; }
+  &:active { color: var(--color-primary-700); }
 }
 
 /* Buttons on dark / primary surfaces (blocks) */
@@ -38,6 +76,10 @@
 
   &:hover {
     background-color: var(--color-light);
+  }
+
+  &:active {
+    background-color: var(--color-primary-50);
   }
 
   &.ss-button--secondary {
