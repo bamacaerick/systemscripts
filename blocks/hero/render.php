@@ -35,18 +35,22 @@ $reverse  = $attributes['imageSide'] === 'left' ? 'md:flex-row-reverse' : 'md:fl
 
             <?php if ($attributes['primaryLabel'] !== '' || $attributes['secondaryLabel'] !== ''): ?>
                 <div class="flex flex-wrap gap-3">
-                    <?php echo Blocks::button($attributes['primaryLabel'], $attributes['primaryUrl'], false, $dark, [
+                    <?php
+                    $primary_button = Blocks::button($attributes['primaryLabel'], $attributes['primaryUrl'], false, $dark, [
                         'variant' => $attributes['primaryAppearance'],
                         'new_tab' => $attributes['primaryNewTab'],
                         'whatsapp_text' => $attributes['primaryWhatsappText'],
                         'icon' => $attributes['primaryIcon'],
                         'icon_position' => $attributes['primaryIconPosition'],
-                    ]); // phpcs:ignore WordPress.Security.EscapeOutput ?>
-                    <?php echo Blocks::button($attributes['secondaryLabel'], $attributes['secondaryUrl'], true, $dark, [
+                    ]);
+                    $secondary_button = Blocks::button($attributes['secondaryLabel'], $attributes['secondaryUrl'], true, $dark, [
                         'variant' => 'secondary',
                         'new_tab' => $attributes['secondaryNewTab'],
                         'whatsapp_text' => $attributes['secondaryWhatsappText'],
-                    ]); // phpcs:ignore WordPress.Security.EscapeOutput ?>
+                    ]);
+                    echo $primary_button; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+                    echo $secondary_button; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+                    ?>
                 </div>
             <?php endif; ?>
         </div>
